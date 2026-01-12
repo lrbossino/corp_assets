@@ -12,3 +12,14 @@ openpyxl>=3.1.0
 
 # Utilities
 requests>=2.31.0
+
+# Real API Integrations (all free, open source)
+# Web Search
+duckduckgo-search>=3.9.0
+
+# Document Parsing
+pdfplumber>=0.10.0
+beautifulsoup4>=4.12.0
+
+# Geocoding
+geopy>=2.3.0

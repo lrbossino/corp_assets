@@ -117,27 +117,34 @@ class RulesEngine:
 
     def plan_research(self, company: Dict[str, Any]) -> Tuple[List[ResearchSubtask], Dict[str, Any]]:
         """
-        Plan research for a company using deterministic rules.
-        No API calls; purely based on company attributes.
+        Plan research for a company using exact data from input file.
+        No API calls; uses exact asset_type_guidelines and asset_count_guidelines provided.
 
         Args:
             company: Company data dictionary with keys:
-                - company_id: Unique identifier
+                - orgid or company_id: Unique identifier
                 - org: Company name
                 - CapitalIntensityBucket: "High" or "Low"
                 - gicslv2: GICS sector classification
-                - asset_type_guidelines: Asset types to focus on
-                - asset_count_guidelines: Target number of assets
+                - asset_type_guidelines: EXACT asset types to research (from input file)
+                - asset_count_guidelines: EXACT target number of assets (from input file)
 
         Returns:
             Tuple of (subtasks, phase_info)
         """
+        # Use exact data from input file
         company_id = company.get("company_id") or company.get("orgid")
         company_name = company.get("org")
         capital_intensity = company.get("CapitalIntensityBucket", "High")
         sector = company.get("gicslv2", "Unknown")
-        asset_types = company.get("asset_type_guidelines", "facilities")
-        target_count = company.get("asset_count_guidelines", 100)
+        
+        # CRITICAL: Use exact guidelines from input file, not defaults
+        asset_types = company.get("asset_type_guidelines")
+        target_count = company.get("asset_count_guidelines")
+        
+        if not asset_types or not target_count:
+            logger.error(f"Missing exact asset guidelines for {company_name}")
+            return [], {"error": "Missing asset_type_guidelines or asset_count_guidelines"}
 
         logger.info(f"Planning research for {company_name} ({capital_intensity} intensity, target: {target_count} assets)")
 
@@ -190,9 +197,11 @@ class RulesEngine:
     def _get_phase_objective(self, phase_name: str, asset_types: str, sector: str) -> str:
         """
         Get the objective for a specific phase.
+        Uses exact asset types from input file.
         Deterministic: template substitution, no reasoning
         """
         template = self.PHASE_OBJECTIVES.get(phase_name, "Research {asset_types}")
+        # Use EXACT asset types from input file
         return template.format(asset_types=asset_types)
 
     def _get_expected_output(self, asset_types: str) -> str:
