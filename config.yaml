@@ -1,0 +1,124 @@
+# V3 Research Application Configuration
+# Rules-Based Architecture with Multi-Provider Batch API Support
+
+# Batch API Configuration
+batch_api:
+  # Provider: "openai" or "doubleword"
+  provider: "doubleword"
+  
+  # API Key (use environment variable BATCH_API_KEY)
+  # api_key: "${BATCH_API_KEY}"
+  
+  # Completion window for batch processing
+  # Doubleword: "24h" (best price) or "1h" (faster)
+  # OpenAI: "24h" only
+  completion_window: "24h"
+
+# Model Configuration
+models:
+  # Doubleword models
+  doubleword:
+    default: "Qwen/Qwen3-VL-30B-A3B-Instruct-FP8"
+    alternatives:
+      - "Qwen/Qwen3-VL-235B-A22B-Instruct-FP8"
+  
+  # OpenAI models
+  openai:
+    default: "gpt-4-1-mini"
+    alternatives:
+      - "gpt-4-turbo"
+
+# Research Configuration
+research:
+  # Batch size: number of subtasks per batch
+  batch_size: 100
+  
+  # Maximum wait time for batch completion (hours)
+  max_wait_hours: 24
+  
+  # Whether to wait for completion or submit asynchronously
+  wait_for_completion: true
+  
+  # Output directory for results
+  output_dir: "./research_output_v3"
+
+# Rules Engine Configuration
+rules_engine:
+  # Capital intensity rules
+  capital_intensity_rules:
+    High:
+      mandatory_phases:
+        - "OFFICIAL_SOURCES"
+        - "LOCAL_REGISTRIES"
+        - "JOB_POSTINGS"
+      optional_phases:
+        - "ALTERNATIVE_SOURCES"
+        - "VALIDATION"
+      min_assets_target: 100
+    
+    Low:
+      mandatory_phases:
+        - "OFFICIAL_SOURCES"
+        - "LOCAL_REGISTRIES"
+      optional_phases:
+        - "JOB_POSTINGS"
+        - "ALTERNATIVE_SOURCES"
+        - "VALIDATION"
+      min_assets_target: 40
+  
+  # Sector to asset type mapping
+  sector_asset_type_mapping:
+    "Semiconductors & Semiconductor Equipment": "Data centers, offices, R&D centers, manufacturing facilities"
+    "Technology Hardware & Equipment": "Data centers, offices, R&D centers, manufacturing facilities"
+    "Software & Services": "Data centers, offices, R&D centers"
+    "Media & Entertainment": "Telecom infrastructure, broadcasting facilities, data centers, offices"
+    "Broadline Retail": "Retail stores, distribution centers, warehouses, manufacturing plants"
+    "Automobiles & Components": "Manufacturing plants, distribution centers, retail locations, warehouses"
+    "Banks": "Office buildings, data centers, ATM networks, branch locations"
+    "Capital Goods": "Manufacturing plants, warehouses, equipment facilities"
+    "Machinery": "Manufacturing plants, warehouses, equipment facilities"
+    "Consumer Services": "Retail stores, distribution centers, warehouses"
+    "Entertainment": "Offices, data centers, broadcasting facilities"
+    "Materials": "Mines, mills, smelters, processing plants, quarries"
+    "Chemicals": "Manufacturing plants, processing facilities, warehouses"
+    "Metals & Mining": "Mines, mills, smelters, processing plants, quarries"
+    "Transportation": "Manufacturing plants, warehouses, distribution centers, maintenance facilities"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "./research_output_v3/research.log"
+
+# Cost Estimation (informational)
+cost_estimation:
+  # Approximate costs per 1M tokens
+  providers:
+    doubleword:
+      model: "Qwen/Qwen3-VL-30B-A3B-Instruct-FP8"
+      input_cost_per_1m: 0.05
+      output_cost_per_1m: 0.20
+      notes: "24h SLA - 77% cheaper than OpenAI"
+    
+    openai:
+      model: "gpt-4-1-mini"
+      input_cost_per_1m: 0.15
+      output_cost_per_1m: 0.60
+      notes: "24h SLA"
+  
+  # Estimated tokens per subtask
+  tokens_per_subtask:
+    input: 1000
+    output: 500
+  
+  # Example costs for different scales
+  example_costs:
+    "20 companies (100 subtasks)":
+      doubleword: "$0.035"
+      openai: "$0.15"
+    "1000 companies (5000 subtasks)":
+      doubleword: "$1.75"
+      openai: "$7.50"
+    "10000 companies (50000 subtasks)":
+      doubleword: "$17.50"
+      openai: "$75.00"

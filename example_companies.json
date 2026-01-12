@@ -1,0 +1,162 @@
+[
+  {
+    "company_id": "apple",
+    "org": "Apple Inc.",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Technology Hardware & Equipment",
+    "asset_type_guidelines": "Data centers, offices, R&D centers, manufacturing facilities",
+    "asset_count_guidelines": 110
+  },
+  {
+    "company_id": "microsoft",
+    "org": "Microsoft Corporation",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Software & Services",
+    "asset_type_guidelines": "Data centers, offices, R&D centers",
+    "asset_count_guidelines": 110
+  },
+  {
+    "company_id": "amazon",
+    "org": "Amazon.com Inc.",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Broadline Retail",
+    "asset_type_guidelines": "Retail stores, distribution centers, warehouses, data centers",
+    "asset_count_guidelines": 200
+  },
+  {
+    "company_id": "jpmorgan",
+    "org": "JPMorgan Chase & Co.",
+    "CapitalIntensityBucket": "Low",
+    "gicslv2": "Banks",
+    "asset_type_guidelines": "Office buildings, data centers, ATM networks, branch locations",
+    "asset_count_guidelines": 40
+  },
+  {
+    "company_id": "tesla",
+    "org": "Tesla Inc.",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Automobiles & Components",
+    "asset_type_guidelines": "Manufacturing plants, distribution centers, retail locations, warehouses",
+    "asset_count_guidelines": 200
+  },
+  {
+    "company_id": "nvidia",
+    "org": "NVIDIA Corporation",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Semiconductors & Semiconductor Equipment",
+    "asset_type_guidelines": "Data centers, offices, R&D centers, manufacturing facilities",
+    "asset_count_guidelines": 110
+  },
+  {
+    "company_id": "alphabet",
+    "org": "Alphabet Inc.",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Media & Entertainment",
+    "asset_type_guidelines": "Data centers, offices, R&D centers, telecom infrastructure",
+    "asset_count_guidelines": 150
+  },
+  {
+    "company_id": "meta",
+    "org": "Meta Platforms Inc.",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Media & Entertainment",
+    "asset_type_guidelines": "Data centers, offices, R&D centers",
+    "asset_count_guidelines": 150
+  },
+  {
+    "company_id": "berkshire",
+    "org": "Berkshire Hathaway Inc.",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Capital Goods",
+    "asset_type_guidelines": "Manufacturing plants, warehouses, equipment facilities",
+    "asset_count_guidelines": 180
+  },
+  {
+    "company_id": "exxon",
+    "org": "ExxonMobil Corporation",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Materials",
+    "asset_type_guidelines": "Refineries, processing plants, distribution centers, warehouses",
+    "asset_count_guidelines": 220
+  },
+  {
+    "company_id": "toyota",
+    "org": "Toyota Motor Corporation",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Automobiles & Components",
+    "asset_type_guidelines": "Manufacturing plants, distribution centers, retail locations",
+    "asset_count_guidelines": 190
+  },
+  {
+    "company_id": "samsung",
+    "org": "Samsung Electronics Co., Ltd.",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Semiconductors & Semiconductor Equipment",
+    "asset_type_guidelines": "Manufacturing facilities, R&D centers, offices, data centers",
+    "asset_count_guidelines": 110
+  },
+  {
+    "company_id": "hsbc",
+    "org": "HSBC Holdings plc",
+    "CapitalIntensityBucket": "Low",
+    "gicslv2": "Banks",
+    "asset_type_guidelines": "Office buildings, data centers, branch locations",
+    "asset_count_guidelines": 40
+  },
+  {
+    "company_id": "nestle",
+    "org": "Nestlé S.A.",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Consumer Staples",
+    "asset_type_guidelines": "Manufacturing plants, distribution centers, warehouses",
+    "asset_count_guidelines": 180
+  },
+  {
+    "company_id": "unilever",
+    "org": "Unilever plc",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Consumer Staples",
+    "asset_type_guidelines": "Manufacturing plants, distribution centers, warehouses",
+    "asset_count_guidelines": 180
+  },
+  {
+    "company_id": "lvmh",
+    "org": "LVMH Moët Hennessy Louis Vuitton SE",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Consumer Discretionary",
+    "asset_type_guidelines": "Retail stores, manufacturing facilities, distribution centers",
+    "asset_count_guidelines": 150
+  },
+  {
+    "company_id": "shell",
+    "org": "Royal Dutch Shell plc",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Materials",
+    "asset_type_guidelines": "Refineries, processing plants, distribution centers, warehouses",
+    "asset_count_guidelines": 220
+  },
+  {
+    "company_id": "deutsche_telekom",
+    "org": "Deutsche Telekom AG",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Media & Entertainment",
+    "asset_type_guidelines": "Telecom infrastructure, data centers, offices",
+    "asset_count_guidelines": 140
+  },
+  {
+    "company_id": "sap",
+    "org": "SAP SE",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Software & Services",
+    "asset_type_guidelines": "Data centers, offices, R&D centers",
+    "asset_count_guidelines": 100
+  },
+  {
+    "company_id": "airbus",
+    "org": "Airbus SE",
+    "CapitalIntensityBucket": "High",
+    "gicslv2": "Industrials",
+    "asset_type_guidelines": "Manufacturing plants, warehouses, distribution centers",
+    "asset_count_guidelines": 190
+  }
+]
